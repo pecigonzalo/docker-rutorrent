@@ -8,8 +8,8 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN locale-gen en_US.UTF-8
 
 # repositories
-RUN add-apt-repository ppa:kirillshkrogalev/ffmpeg-next
-
+RUN add-apt-repository ppa:kirillshkrogalev/ffmpeg-next && \
+add-apt-repository -y ppa:jalaziz/rtorrent
 # install packages
 RUN  apt-get update &&\
 apt-get -y install \ 
@@ -17,6 +17,7 @@ ffmpeg \
 git-core \
 mediainfo \
 php5-geoip \
+rtorrent \
 tmux \
 unrar \
 unzip \
