@@ -6,7 +6,8 @@ fi
 cp /config/rtorrent/config.php  /config/www/conf/config.php
 
 if [ ! -f "/config/rtorrent/rtorrent.rc" ]; then
-cp defaults/rtorrent.rc /config/rtorrent/rtorrent.rc
+cp /defaults/rtorrent.rc /config/rtorrent/rtorrent.rc
 fi
 
-chown abc:abc -R /config/rtorrent
+cp /config/rtorrent/rtorrent.rc /abc_home/.rtorrent.rc
+chown abc:abc -R /config/rtorrent /abc_home

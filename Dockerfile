@@ -13,12 +13,13 @@ add-apt-repository -y ppa:jalaziz/rtorrent
 # install packages
 RUN  apt-get update &&\
 apt-get -y install \ 
+dtach \
 ffmpeg \
 git-core \
 mediainfo \
 php5-geoip \
+php5-xmlrpc \
 rtorrent \
-tmux \
 unrar \
 unzip \
 wget -qy && \
@@ -28,15 +29,16 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # set the volumes
 VOLUME /config /downloads
 
-# create a home folder for abc user and rtorrent session folder
-RUN mkdir -p /abc_home/.rtorrentsession && \
-usermod -d /abc_home abc
+# create a rtorrent session folder
+RUN mkdir -p /abc_home/.rtorrentsession
+
+# expose ports
+EXPOSE 9527 45566-45576
 
 #Adding Custom files
 RUN mkdir -p /defaults 
 ADD defaults/ /defaults/
 ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
 

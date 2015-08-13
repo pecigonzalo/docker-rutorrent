@@ -37,7 +37,7 @@ directory = /download
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = ~/.rtorrentsession
+session = /abc_home/.rtorrentsession
  
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
