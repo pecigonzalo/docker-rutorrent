@@ -17,8 +17,8 @@ dtach \
 ffmpeg \
 git-core \
 mediainfo \
+nano \
 php5-geoip \
-php5-xmlrpc \
 rtorrent \
 unrar \
 unzip \

@@ -14,3 +14,4 @@ mkdir -p /rtorrent_sess
 fi
 
 chown abc:abc -R /config/rtorrent /rtorrent_sess
+chown abc:abc /downloads
