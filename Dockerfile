@@ -29,9 +29,6 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # set the volumes
 VOLUME /config /downloads
 
-# create a rtorrent session folder
-RUN mkdir -p /abc_home/.rtorrentsession
-
 # expose ports
 EXPOSE 9527 45566-45576
 
