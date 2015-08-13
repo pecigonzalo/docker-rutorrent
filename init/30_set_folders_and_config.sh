@@ -9,9 +9,9 @@ if [ ! -f "/config/rtorrent/rtorrent.rc" ]; then
 cp /defaults/rtorrent.rc /config/rtorrent/rtorrent.rc
 fi
 
-if [ ! -d "/rtorrent_sess" ]; then
-mkdir -p /rtorrent_sess
+if [ ! -d "/config/rtorrent/rtorrent_sess" ]; then
+mkdir -p /config/rtorrent/rtorrent_sess
 fi
 
-chown abc:abc -R /config/rtorrent /rtorrent_sess
+chown abc:abc -R /config/rtorrent
 chown abc:abc /downloads
