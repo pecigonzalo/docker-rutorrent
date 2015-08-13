@@ -1,7 +1,12 @@
 #!/bin/bash
-if [ ! -f "config/config.php" ]; then
-cp /defaults/config.php config/config.php
+mkdir -p /config/rtorrent
+if [ ! -f "/config/rtorrent/config.php" ]; then
+cp /defaults/config.php /config/rtorrent/config.php
 fi
-cp /defaults/config.php /app/rutorrent/conf/config.php
-chown abc:abc config/config.php
+cp /config/rtorrent/config.php  /config/www/conf/config.php
 
+if [ ! -f "/config/rtorrent/rtorrent.rc" ]; then
+cp defaults/rtorrent.rc /config/rtorrent/rtorrent.rc
+fi
+
+chown abc:abc -R /config/rtorrent

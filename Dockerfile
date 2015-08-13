@@ -28,6 +28,10 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # set the volumes
 VOLUME /config /downloads
 
+# create a home folder for abc user and rtorrent session folder
+RUN mkdir -p /abc_home/.rtorrentsession && \
+usermod -d /abc_home abc
+
 #Adding Custom files
 RUN mkdir -p /defaults 
 ADD defaults/ /defaults/
