@@ -30,12 +30,13 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 VOLUME /config /downloads
 
 # expose ports
-EXPOSE 9527 45566 45567 45568 45569 45570 45571 45572 45573 45574 45575 45576
+EXPOSE 9527 45566-45576
 
 #Adding Custom files
 RUN mkdir -p /defaults 
 ADD defaults/ /defaults/
 ADD init/ /etc/my_init.d/
+RUN if [ -f "/etc/my_init.d/20_update_base_apps.sh" ]; then echo "apt-get --only-upgrade install rtorrent -qqy" >> /etc/my_init.d/20_update_base_apps.sh ; else mv /defaults/22_update_apps.sh /etc/my_init.d/22_update_apps.sh ; fi
 RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
 

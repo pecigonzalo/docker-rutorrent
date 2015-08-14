@@ -13,5 +13,9 @@ if [ ! -d "/config/rtorrent/rtorrent_sess" ]; then
 mkdir -p /config/rtorrent/rtorrent_sess
 fi
 
-chown abc:abc -R /config
+if [ ! -d "/detach_sess" ]; then
+mkdir -p /detach_sess
+fi
+
+chown abc:abc -R /config /detach_sess
 chown abc:abc /downloads
