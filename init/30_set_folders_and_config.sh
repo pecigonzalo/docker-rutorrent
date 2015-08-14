@@ -13,5 +13,8 @@ if [ ! -d "/config/rtorrent/rtorrent_sess" ]; then
 mkdir -p /config/rtorrent/rtorrent_sess
 fi
 
+if [ ! -f "/config/nginx/site-confs/default" ]; then
+cp /defaults/rutorrent.www /config/nginx/site-confs/default
+fi
 chown abc:abc -R /config
 chown abc:abc /downloads
