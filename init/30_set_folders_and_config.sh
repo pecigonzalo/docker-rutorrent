@@ -13,9 +13,5 @@ if [ ! -d "/config/rtorrent/rtorrent_sess" ]; then
 mkdir -p /config/rtorrent/rtorrent_sess
 fi
 
-if [ -f "/config/rtorrent/rtorrent_sess/.dtach" ]; then
-rm /config/rtorrent/rtorrent_sess/.dtach
-fi
-
 chown abc:abc -R /config
 chown abc:abc /downloads
