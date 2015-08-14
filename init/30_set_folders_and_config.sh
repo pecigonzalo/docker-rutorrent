@@ -13,5 +13,5 @@ if [ ! -d "/config/rtorrent/rtorrent_sess" ]; then
 mkdir -p /config/rtorrent/rtorrent_sess
 fi
 
-chown abc:abc -R /config/rtorrent
+chown abc:abc -R /config
 chown abc:abc /downloads
