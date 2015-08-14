@@ -2,8 +2,7 @@
 
 # clear hanging .dtach file from previous session
 if [ -f "/config/rtorrent/rtorrent_sess/.dtach" ]; then
-rm 
-/config/rtorrent/rtorrent_sess/.dtach
+rm /config/rtorrent/rtorrent_sess/.dtach
 sleep 1s
 fi
 
