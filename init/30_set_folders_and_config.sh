@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir -p /config/rtorrent
+mkdir -p /config/rtorrent /config/log/rtorrent
 if [ ! -f "/config/rtorrent/config.php" ]; then
 cp /defaults/config.php /config/rtorrent/config.php
 fi
