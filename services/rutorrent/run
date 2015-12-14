@@ -1,0 +1,4 @@
+#!/bin/bash
+
+umask 0002
+/sbin/setuser abc /usr/bin/rtorrent -n -o import=/config/rtorrent/rtorrent.rc
